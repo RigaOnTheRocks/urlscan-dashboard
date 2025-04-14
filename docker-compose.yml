@@ -9,6 +9,7 @@ services:
       - "80"
     environment:
       - PORT=80
+      - REACT_APP_API_URL=http://localhost/api
     depends_on:
       - backend
     networks:
