@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# URLScan Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A real-time dashboard for monitoring and analyzing URLScan.io scan results. Built with React and Node.js, featuring live feed updates, historical search, and detailed scan analysis.
 
-## Available Scripts
+![URLScan Dashboard Screenshot](.github/screenshot.png)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- 🔄 Real-time live feed of URLScan.io results
+- 🔍 Advanced search capabilities with URLScan.io query syntax
+- 🌓 Dark/Light mode support
+- 📊 Detailed scan analysis with screenshots and security verdicts
+- 🔐 API key integration for higher rate limits
+- ⏸️ Pause/Resume live feed functionality
+- 📱 Responsive design for all devices
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js (v14 or higher)
+- npm or yarn
+- URLScan.io API key (optional, but recommended)
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/urlscan-dashboard.git
+   cd urlscan-dashboard
+   ```
 
-### `npm run build`
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Create a `.env` file in the root directory (optional):
+   ```
+   PORT=3001
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Start the backend server:
+   ```bash
+   node server.js
+   ```
 
-### `npm run eject`
+2. In a new terminal, start the frontend development server:
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Setting Up Your API Key
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Get your API key from [URLScan.io](https://urlscan.io/user/apikey/)
+2. In the dashboard:
+   - Click the Settings icon
+   - Enter your API key
+   - Click Save
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Search Syntax
 
-## Learn More
+The dashboard supports URLScan.io's query syntax:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Basic search: Enter a domain or URL
+- Advanced queries:
+  - `page.domain:"example.com"`
+  - `page.url:"https://example.com"`
+  - `country:US`
+  - `ip:1.2.3.4`
+  - `asn:AS123456`
+  - Multiple conditions: `country:US AND server:nginx`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Development
 
-### Code Splitting
+### Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+urlscan-dashboard/
+├── src/
+│   ├── components/
+│   │   └── URLScanDashboard.js
+│   ├── App.js
+│   └── index.js
+├── server.js
+├── package.json
+└── README.md
+```
 
-### Analyzing the Bundle Size
+### Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `PORT`: Backend server port (default: 3001)
 
-### Making a Progressive Web App
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/AmazingFeature`
+3. Commit your changes: `git commit -m 'Add some AmazingFeature'`
+4. Push to the branch: `git push origin feature/AmazingFeature`
+5. Open a Pull Request
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### Deployment
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [URLScan.io](https://urlscan.io) for their excellent API
+- [React](https://reactjs.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Lucide Icons](https://lucide.dev)
