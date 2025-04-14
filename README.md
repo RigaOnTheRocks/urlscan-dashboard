@@ -4,7 +4,7 @@
 The live feed on Urlscan.io is restricted to 16 screenshots at a time, while my dashboard continuously displays all scanned websites along with historical scan data visualization.
 
 ![LiveFeed](https://github.com/user-attachments/assets/e3a58e34-c4c1-42bd-b22c-91eff853795e)
-![ScanDetails](https://github.com/user-attachments/assets/fe8d82ce-499e-4399-9cf2-0496e588cbea)
+![Details](https://github.com/user-attachments/assets/47540b5a-3cf6-4475-afcf-381d0be68cbf)
 
 ## Prerequisites
 
