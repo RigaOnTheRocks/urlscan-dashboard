@@ -18,7 +18,7 @@ The live feed on Urlscan.io is restricted to 16 screenshots at a time, while my 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/urlscan-dashboard.git
+   git clone https://github.com/RigaOnTheRocks/urlscan-dashboard.git
    cd urlscan-dashboard
    ```
 
