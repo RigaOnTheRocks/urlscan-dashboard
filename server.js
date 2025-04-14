@@ -4,7 +4,15 @@ const axios = require('axios');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+// CORS configuration
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN || '*',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'API-Key'],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Proxy for search API
@@ -58,6 +66,11 @@ app.get('/api/result/:uuid', async (req, res) => {
       error: error.response?.data?.message || error.message 
     });
   }
+});
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
 });
 
 app.listen(PORT, () => {
