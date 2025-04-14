@@ -1,13 +1,10 @@
 # URLScan Dashboard
 
-A modern dashboard for monitoring and analyzing URLScan.io data.
+### Why ?
+The live feed on Urlscan.io is restricted to 16 screenshots at a time, while my dashboard continuously displays all scanned websites along with historical scan data visualization.
 
-## Features
-
-- Real-time URL scanning
-- Historical scan data visualization
-- Interactive dashboard interface
-- API integration with URLScan.io
+![LiveFeed](https://github.com/user-attachments/assets/e3a58e34-c4c1-42bd-b22c-91eff853795e)
+![ScanDetails](https://github.com/user-attachments/assets/fe8d82ce-499e-4399-9cf2-0496e588cbea)
 
 ## Prerequisites
 
@@ -59,36 +56,12 @@ The application will be available at `http://localhost:3000`.
    docker-compose down
    ```
 
-The application will be available at:
-- Frontend: http://localhost
-- Backend API: http://localhost/api
-
 ## Environment Variables
 
 | Variable | Description | Required |
 |----------|-------------|----------|
 | REACT_APP_URLSCAN_API_KEY | Your URLScan.io API key | Yes |
 
-## Project Structure
-
-```
-urlscan-dashboard/
-├── src/                 # Frontend source code
-├── public/             # Static files
-├── server.js           # Backend server
-├── Dockerfile          # Frontend Docker configuration
-├── Dockerfile.backend  # Backend Docker configuration
-├── docker-compose.yml  # Docker Compose configuration
-└── nginx.conf          # Nginx configuration
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## License
 
