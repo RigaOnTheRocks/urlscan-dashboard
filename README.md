@@ -1,26 +1,23 @@
 # URLScan Dashboard
 
-A real-time dashboard for monitoring and analyzing URLScan.io scan results. Built with React and Node.js, featuring live feed updates, historical search, and detailed scan analysis.
-
-![URLScan Dashboard Screenshot](.github/screenshot.png)
+A modern dashboard for monitoring and analyzing URLScan.io data.
 
 ## Features
 
-- 🔄 Real-time live feed of URLScan.io results
-- 🔍 Advanced search capabilities with URLScan.io query syntax
-- 🌓 Dark/Light mode support
-- 📊 Detailed scan analysis with screenshots and security verdicts
-- 🔐 API key integration for higher rate limits
-- ⏸️ Pause/Resume live feed functionality
-- 📱 Responsive design for all devices
+- Real-time URL scanning
+- Historical scan data visualization
+- Interactive dashboard interface
+- API integration with URLScan.io
 
 ## Prerequisites
 
-- Node.js (v14 or higher)
-- npm or yarn
-- URLScan.io API key (optional, but recommended)
+- Node.js (v18 or higher)
+- Docker and Docker Compose (optional, for containerized deployment)
+- URLScan.io API key
 
-## Installation
+## Getting Started
+
+### Local Development
 
 1. Clone the repository:
    ```bash
@@ -31,78 +28,66 @@ A real-time dashboard for monitoring and analyzing URLScan.io scan results. Buil
 2. Install dependencies:
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
-3. Create a `.env` file in the root directory (optional):
+3. Create a `.env` file in the root directory with your URLScan.io API key:
    ```
-   PORT=3001
-   ```
-
-## Usage
-
-1. Start the backend server:
-   ```bash
-   node server.js
+   REACT_APP_URLSCAN_API_KEY=your_api_key_here
    ```
 
-2. In a new terminal, start the frontend development server:
+4. Start the development server:
    ```bash
    npm start
-   # or
-   yarn start
    ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser
+The application will be available at `http://localhost:3000`.
 
-## Setting Up Your API Key
+### Docker Deployment
 
-1. Get your API key from [URLScan.io](https://urlscan.io/user/apikey/)
-2. In the dashboard:
-   - Click the Settings icon
-   - Enter your API key
-   - Click Save
+1. Build and start the containers:
+   ```bash
+   docker-compose up --build
+   ```
 
-## Search Syntax
+2. To run in detached mode:
+   ```bash
+   docker-compose up -d --build
+   ```
 
-The dashboard supports URLScan.io's query syntax:
+3. To stop the containers:
+   ```bash
+   docker-compose down
+   ```
 
-- Basic search: Enter a domain or URL
-- Advanced queries:
-  - `page.domain:"example.com"`
-  - `page.url:"https://example.com"`
-  - `country:US`
-  - `ip:1.2.3.4`
-  - `asn:AS123456`
-  - Multiple conditions: `country:US AND server:nginx`
+The application will be available at:
+- Frontend: http://localhost
+- Backend API: http://localhost/api
 
-## Development
+## Environment Variables
 
-### Project Structure
+| Variable | Description | Required |
+|----------|-------------|----------|
+| REACT_APP_URLSCAN_API_KEY | Your URLScan.io API key | Yes |
+
+## Project Structure
 
 ```
 urlscan-dashboard/
-├── src/
-│   ├── components/
-│   │   └── URLScanDashboard.js
-│   ├── App.js
-│   └── index.js
-├── server.js
-├── package.json
-└── README.md
+├── src/                 # Frontend source code
+├── public/             # Static files
+├── server.js           # Backend server
+├── Dockerfile          # Frontend Docker configuration
+├── Dockerfile.backend  # Backend Docker configuration
+├── docker-compose.yml  # Docker Compose configuration
+└── nginx.conf          # Nginx configuration
 ```
-
-### Environment Variables
-
-- `PORT`: Backend server port (default: 3001)
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/AmazingFeature`
-3. Commit your changes: `git commit -m 'Add some AmazingFeature'`
-4. Push to the branch: `git push origin feature/AmazingFeature`
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
 ## License
